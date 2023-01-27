@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+// import Card from './components/card';
+import Data from "./components/data";
+import Routes from "./components/routes";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const { productItems } = Data;
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAddProduct = (product) => {
+    console.log("Btn ta thicexa")
+    const productExist = cartItems.find((item) => item.id === product.id);
+    if (productExist) {
+      setCartItems(
+        cartItems.map((item) => item.id === product.id)
+          ? { ...productExist, quantity: productExist.quantity + 1 }
+          : product
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes
+          productItems={productItems}
+          cartItems={cartItems}
+          handleAddProduct={handleAddProduct}
+        />
+      </Router>
+      {/* <Card /> */}
     </div>
   );
 }
