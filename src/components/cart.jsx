@@ -2,7 +2,7 @@ import React from "react";
 // import Button from 'react-bootstrap/Button';
 // import Card from 'react-bootstrap/Card';
 
-const Cart = ({cartItems,handleAddProduct,handleMinusProduct}) => {
+const Cart = ({cartItems,handleAddProduct,}) => {
   return (
     <div className="cart-items">
       <div className="cart-header">
@@ -16,10 +16,6 @@ const Cart = ({cartItems,handleAddProduct,handleMinusProduct}) => {
             <div key={item.id} className="item-list" >
               <img className="item-image" src={item.image} alt={item.name} />
               <div className="item-name">{item.name}</div>
-              <div className="items-function">
-                <button className="items-add" onClick={() => handleAddProduct(item)}>+</button>
-                <button className="items-minus" onClick={() => handleMinusProduct(item)}>-</button>
-              </div>
 
             </div>
           })}

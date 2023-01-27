@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Products from "./products.js";
-import Cart from "./cart.js";
+import Products from "./products.jsx";
+import Cart from "./cart.jsx";
 
-const Routes = ({productItems,cartItems,handleAddProduct,handleMinusProduct}) => {
+const Routes = ({productItems,cartItems,handleAddProduct}) => {
   return (
     <div>
       <Switch>
@@ -11,7 +11,7 @@ const Routes = ({productItems,cartItems,handleAddProduct,handleMinusProduct}) =>
           <Products productItems={productItems} handleAddProduct={handleAddProduct} />
         </Route>
         <Route exact path="/cart" >
-          <Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleMinusProduct={handleMinusProduct} />
+          <Cart cartItems={cartItems} handleAddProduct={handleAddProduct}  />
         </Route>
       </Switch>
       {/* <Routes>
