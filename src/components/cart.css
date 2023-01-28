@@ -1,0 +1,23 @@
+.cart-items{
+    margin: 30px auto;
+    width: 50%;
+    background-color: orange;
+    border: 2px solid;
+    border-radius: 5px;
+}
+.cart-items-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    border-bottom: 2px solid black;
+}
+.cart-items-empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
