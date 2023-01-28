@@ -3,37 +3,37 @@ const data ={
         {
             id:1,
             name:"Headphone",
-            price : 999,
+            price : 199,
             image:"./vans.jpg"
         },
         {
             id:2,
-            name:"Headphone",
-            price : 999,
+            name:"Earphone",
+            price : 122,
             image:"./vans.jpg"
         },
         {
             id:3,
-            name:"Headphone",
-            price : 999,
+            name:"Watch",
+            price : 399,
             image:"./vans.jpg"
         },
         {
             id:4,
-            name:"Headphone",
-            price : 999,
+            name:"Mouse",
+            price : 344,
             image:"./vans.jpg"
         },
         {
             id:5,
-            name:"Headphone",
-            price : 999,
+            name:"Controller",
+            price : 499,
             image:"./vans.jpg"
         },
         {
             id:6,
-            name:"Headphone",
-            price : 999,
+            name:"Fan",
+            price : 555,
             image:"./vans.jpg"
         },
     ]

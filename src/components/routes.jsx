@@ -3,18 +3,15 @@ import { Route, Switch } from "react-router-dom";
 import Products from "./products.jsx";
 import Cart from "./cart.jsx";
 
-const Routes = ({productItems,cartItems,handleAddProduct,warning}) => {
+const Routes = ({productItems,cartItems,handleAddProduct,handleChange}) => {
   return (
     <div>
       <Switch>
         <Route exact path="/" >
           <Products productItems={productItems} handleAddProduct={handleAddProduct} />
-          {
-            warning && <div> Item already added</div>
-          }
         </Route>
         <Route exact path="/cart" >
-          <Cart cartItems={cartItems} handleAddProduct={handleAddProduct}  />
+          <Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleChange={handleChange} />
         </Route>
       </Switch>
       {/* <Routes>
