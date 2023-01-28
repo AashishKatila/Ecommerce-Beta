@@ -7,25 +7,11 @@ import { useState } from "react";
 
 function App() {
   const { productItems } = Data;
-  const [warning,setWarning] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
 
   const handleAddProduct = (item) =>{
     console.log("Btn ta thichiyo");
-    // let isPresent = false;
-    // cartItems.forEach((product) =>{
-    //   if(item.id === product.id){
-    //     isPresent = true
-    //   }
-    // })
-    // if (isPresent){
-		// 	setWarning(true);
-		// 	setTimeout(()=>{
-		// 		setWarning(false);
-		// 	}, 2000);
-		// 	return ;
-		// }
 		setCartItems([...cartItems, item]);
 	}
 
@@ -45,7 +31,6 @@ function App() {
     setCartItems([...temp])
   }
 
-
   return (
     <div>
       <Router>
@@ -55,6 +40,7 @@ function App() {
           cartItems={cartItems}
           handleAddProduct={handleAddProduct}
           handleChange={handleChange}
+          setCartItems={setCartItems}
         />
       </Router>
       {/* <Card /> */}

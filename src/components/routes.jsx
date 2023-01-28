@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Products from "./products.jsx";
 import Cart from "./cart.jsx";
 
-const Routes = ({productItems,cartItems,handleAddProduct,handleChange}) => {
+const Routes = ({productItems,cartItems,handleAddProduct,handleChange,setCartItems}) => {
   return (
     <div>
       <Switch>
@@ -11,7 +11,7 @@ const Routes = ({productItems,cartItems,handleAddProduct,handleChange}) => {
           <Products productItems={productItems} handleAddProduct={handleAddProduct} />
         </Route>
         <Route exact path="/cart" >
-          <Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleChange={handleChange} />
+          <Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleChange={handleChange} setCartItems={setCartItems} />
         </Route>
       </Switch>
       {/* <Routes>
