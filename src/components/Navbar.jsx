@@ -32,7 +32,7 @@ function Navbar() {
           </li>
         
           <li>
-            <Link to="/total">Total</Link>
+            <Link to="/checkout">Checkout</Link>
           </li>
         </ul>
       </div>

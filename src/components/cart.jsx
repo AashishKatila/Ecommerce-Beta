@@ -2,22 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./cart.css";
 
-const Cart = ({ cartItems, handleChange ,setCartItems}) => {
+const Cart = ({ cartItems, handleChange, setCartItems }) => {
 
-//   const totalPrice = cartItems.reduce(
-//     (price, item) => price + item.quantity * item.price,
-//     0
-//   );
+  console.log(cartItems)
 
-
-const [totalPrice, setTotalPrice] = useState(0)
-useEffect(() => {
-  setTotalPrice(cartItems.reduce(
-    (price, item) => price + item.amount * item.price,
-    0
-  ));
-}, [cartItems])
-
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    setTotalPrice(
+      cartItems.reduce((price, item) => price + item.amount * item.price, 0)
+    );
+  }, [cartItems]);
 
   // const [totalPrice, setTotalPrice] = useState(0)
   // useEffect(() => {

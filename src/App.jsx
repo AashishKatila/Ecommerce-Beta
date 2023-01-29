@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-// import Card from './components/card';
 import Data from "./components/data";
 import Routes from "./components/routes";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -44,7 +43,6 @@ function App() {
           setCartItems={setCartItems}
         />
       </Router>
-      {/* <Card /> */}
     </div>
   );
 }
