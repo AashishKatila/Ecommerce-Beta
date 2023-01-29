@@ -29,7 +29,7 @@ const Routes = ({
           />
         </Route>
         <Route exact path="/checkout">
-          <Checkout cartItems={cartItems} />
+          <Checkout cartItems={cartItems} setCartItems={setCartItems} />
         </Route>
       </Switch>
     </div>

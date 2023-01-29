@@ -4,9 +4,9 @@
 }
 
 .cart-items{
-    margin: 30px auto;
-    width: 50%;
-    background-color: orange;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #EBEDEF;
     border: 2px solid;
     border-radius: 5px;
 }

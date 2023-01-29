@@ -13,25 +13,16 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
     );
   }, [cartItems]);
 
-  // const [totalPrice, setTotalPrice] = useState(0)
-  // useEffect(() => {
-  //   setTotalPrice(cartItems.reduce((price, item) => {
-  //     if (!item.quantity || isNaN(item.quantity)) {
-  //       item.quantity = 0;
-  //     }
-  //     return price + item.quantity * item.price
-  //   }, 0));
-  // }, [cartItems])
-
-  // const totalPrice = cartItems.reduce(
-  //   (price, item) => price + (item.quantity * item.price),
-  //   0
-  // );
 
   const handleRemove = (id) => {
     const arr = cartItems.filter((item) => item.id !== id);
     setCartItems(arr);
   };
+  
+  const handleDelete = () =>{
+    console.log("Checkout Clicked")
+    setCartItems([])
+  } 
 
   return (
     <div className="cart-items">
@@ -72,7 +63,7 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
                   </div>
                 </div>
                 <div className="item-total-remove">
-                  <span>{item.price}</span>
+                  <span>${item.price}</span>
                   <button onClick={() => handleRemove(item.id)}>Remove</button>
                 </div>
               </div>
@@ -82,6 +73,9 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
         <div className="total">
           <h3>Total price : Rs {totalPrice}</h3>
         </div>
+        <button onClick={() => handleDelete}>
+          Checkout
+        </button>
       </div>
     </div>
   );
