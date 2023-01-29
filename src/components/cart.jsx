@@ -1,29 +1,14 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import "./cart.css";
 
 const Cart = ({ cartItems, handleChange, setCartItems }) => {
-
-  console.log(cartItems)
-
-  const [totalPrice, setTotalPrice] = useState(0);
-  useEffect(() => {
-    setTotalPrice(
-      cartItems.reduce((price, item) => price + item.amount * item.price, 0)
-    );
-  }, [cartItems]);
-
+  console.log(cartItems);
 
   const handleRemove = (id) => {
     const arr = cartItems.filter((item) => item.id !== id);
-    console.log("handle Remove Clicked")
+    console.log("handle Remove Clicked");
     setCartItems(arr);
   };
-
-  const handleDelete = () => {
-    console.log("Checkout Clicked")
-    setCartItems([])
-  } 
 
   return (
     <div className="cart-items">
@@ -65,18 +50,17 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
                 </div>
                 <div className="item-total-remove">
                   <span className="item-price">${item.price}</span>
-                  <button className="remove-btn" onClick={() => handleRemove(item.id)}>Remove</button>
+                  <button
+                    className="remove-btn"
+                    onClick={() => handleRemove(item.id)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             </>
           );
         })}
-        {/* <div className="total">
-          <h3>Total price : ${totalPrice}</h3>
-        </div> */}
-        {/* <button onClick={() => handleDelete()}>
-          Checkout
-        </button> */}
       </div>
     </div>
   );

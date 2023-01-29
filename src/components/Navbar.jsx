@@ -7,14 +7,13 @@ import "./navbar.css";
 function Navbar() {
   return (
     <div className="navbar">
-      <div>
         <h1>
           <Link to="/" className="logo">
             Ecommerce
           </Link>
         </h1>
-      </div>
-      <div >
+      
+      <div>
         <ul className="navbar-links">
           <li>
             <Link to="/">Home</Link>

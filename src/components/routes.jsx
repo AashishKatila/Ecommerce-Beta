@@ -9,7 +9,7 @@ const Routes = ({
   cartItems,
   handleAddProduct,
   handleChange,
-  setCartItems,
+  setCartItems
 }) => {
   return (
     <div>

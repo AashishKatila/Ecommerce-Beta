@@ -82,6 +82,9 @@
 .cart-remove:active{
     transform: translateY(1.2px);
 }
+.item-amount{
+    font-size: 20px;
+}
 
 .cart-total-name{
     display: flex;
@@ -109,7 +112,4 @@
     border-radius: 4px;
     padding: 5px;
 }
-/* .total{
-    text-align: center;
-    margin-top: 18px;
-} */
+

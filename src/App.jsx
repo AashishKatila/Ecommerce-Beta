@@ -8,9 +8,8 @@ function App() {
   const { productItems } = Data;
   const [cartItems, setCartItems] = useState([]);
 
-
   const handleAddProduct = (item) =>{
-    console.log("Btn ta thichiyo");
+    // console.log(item.id);
 		setCartItems([...cartItems, item]);
 	}
 

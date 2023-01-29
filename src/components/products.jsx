@@ -1,7 +1,7 @@
 import React from "react";
 import "./product.css";
 
-const Products = ({ productItems,handleAddProduct }) => {
+const Products = ({ productItems, handleAddProduct }) => {
   return (
     <div className="products">
       {productItems.map((productItem) => (
@@ -14,26 +14,20 @@ const Products = ({ productItems,handleAddProduct }) => {
             />
           </div>
           <div>
-            <h3 className="product-name">
-              {productItem.name}
-            </h3>
+            <h3 className="product-name">{productItem.name}</h3>
           </div>
-          <div className="product-price">
-            ${productItem.price}
-          </div>
-          <div >
-            <button className="product-add" onClick={() => handleAddProduct(productItem)} >
+          <div className="product-price">${productItem.price}</div>
+          <div>
+            <button
+              className="product-add"
+              onClick={() => handleAddProduct(productItem)}
+            >
               Add to Cart
             </button>
           </div>
-
         </div>
       ))}
-      
     </div>
-    // <>
-    //   List of Products
-    // </>
   );
 };
 

@@ -31,6 +31,9 @@ const checkout = ({ cartItems, setCartItems }) => {
   return (
     <div className="summary">
       <div>
+        <span className="price">Price : ${totalPrice}</span>
+      </div>
+      <div className="payment">
         Payment Option:-
         <div className="options">
           <input
@@ -39,14 +42,14 @@ const checkout = ({ cartItems, setCartItems }) => {
             name="payment"
             onChange={onOptionChange}
           />{" "}
-          Cash on Delivery ($200)
+          Cash on Delivery (+$200)
           <input
             type="radio"
             value="advance"
             name="payment"
             onChange={onOptionChange}
-          />{" "}
-          Advance Payment ($50)
+          />
+          Advance Payment (+$50)
         </div>
       </div>
       {finalPrice ? (
@@ -58,7 +61,7 @@ const checkout = ({ cartItems, setCartItems }) => {
         <></>
       )}
       <button className="checkout" onClick={() => handleDelete()}>
-        {finalPrice?<Link to="/">Checkout</Link>:<>Checkout</>}
+        {finalPrice ? <Link to="/">Checkout</Link> : <>Checkout</>}
       </button>
     </div>
   );
