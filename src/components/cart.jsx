@@ -16,10 +16,11 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
 
   const handleRemove = (id) => {
     const arr = cartItems.filter((item) => item.id !== id);
+    console.log("handle Remove Clicked")
     setCartItems(arr);
   };
-  
-  const handleDelete = () =>{
+
+  const handleDelete = () => {
     console.log("Checkout Clicked")
     setCartItems([])
   } 
@@ -37,7 +38,7 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
           return (
             <>
               <div className="row">
-                <div>
+                <div className="all-items">
                   <div key={item.id} className="item-list">
                     <img
                       className="item-image"
@@ -63,19 +64,19 @@ const Cart = ({ cartItems, handleChange, setCartItems }) => {
                   </div>
                 </div>
                 <div className="item-total-remove">
-                  <span>${item.price}</span>
-                  <button onClick={() => handleRemove(item.id)}>Remove</button>
+                  <span className="item-price">${item.price}</span>
+                  <button className="remove-btn" onClick={() => handleRemove(item.id)}>Remove</button>
                 </div>
               </div>
             </>
           );
         })}
-        <div className="total">
-          <h3>Total price : Rs {totalPrice}</h3>
-        </div>
-        <button onClick={() => handleDelete}>
+        {/* <div className="total">
+          <h3>Total price : ${totalPrice}</h3>
+        </div> */}
+        {/* <button onClick={() => handleDelete()}>
           Checkout
-        </button>
+        </button> */}
       </div>
     </div>
   );
